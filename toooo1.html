@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fcamp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--media button-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--back to top -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<style>
+
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+    body{
+    font-family: 'Quicksand', sans-serif;
+  }
+video {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.footer {
+   position: inherit;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#262626;
+   color: white;
+   text-align: center;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+
+ h3.image {
+  font-weight: bold;
+  color: #fff;
+  font-size: 80px;
+} 
+p.image {
+  font-weight: bold;
+  color: #fff;
+  font-size: 30px;
+} 
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+form {
+  padding: 15px;
+  border: 1px solid #666;
+  background: #fff;
+  display: none;
+}
+
+#formButton {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+* {box-sizing: border-box}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the yes button */
+.cancelbtn {
+  background-color:  #ff8533;
+  color: black;
+}
+
+/* Add a color to the maybe button */
+.deletebtn {
+  background-color:  #4CAF50;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+    width: 100%;
+  }
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $("#formButton").click(function() {
+    $("#form1").toggle();
+  });
+});
+  
+</script>
+
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Fcamp</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link"  href="toooo1.html">Home </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="#eve">Events</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="#foo">Food and Beverage</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#reg">Registation</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="#gal">Gallery</a>
+    </li>
+  </ul>
+</nav>
+<div id="demo" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="D:\Destop\Aesthetic\fpt2.jpg" alt="chihiro" width="1100" height="500">
+      <div class="centered">
+        <h3 class="image">Welcome to F-Camp</h3>
+        <p class="image" style="display: inline;">30m Street, Hoa Lac Campus </p>
+        <p class= "image"style="float: right;">8h00 am 23/3/2021</p>  
+      </div>   
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<section>
+
+<div>
+
+  <h1 id ="eve" style="text-align: center";>Introduction</h1>
+  <hr class="w-100">
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="D:\Destop\Aesthetic\ff2.jpg" style="width: 600px;height: 450px">
+    </div>
+
+    <div class="col">
+      <h2> What is the F-camp?</h2>
+      <p style="text-align: left;">
+Fcamp, from a welcoming event with the size of student goods over the years, has become a unique "special culture" of FPT University Hanoi. More specifically, the return of F-Camp 2020 is a milestone for a decade's journey of heat and pride of thousands of people dedicated to this event. Those are the BTC brothers and sisters, the village chiefs and the OGL of all seasons. F-Camp could not be a special and the scale of today lacks the donation of everyone.<br>After many years, the image of an enthusiastic BTC and dedicated OGLs are always beautiful memories in the mind of each new student, and from there inspire fire, bring continuation, bring young energies of FPTU comes to many programs. I hope that F-Camp will forever be a symbol of dynamism, enthusiasm, burning when thinking about it.</p>
+
+    
+   </div>
+  </div>
+</section>
+<div style="height: 100px"></div>
+    <div class="container">
+      <video id="vid" width="100" height="240" autoplay muted loop>
+  <source src="D:\Destop\Aesthetic\Fcamp.mp4" type="video/mp4">
+  <source src="Fcamp.ogg" type="video/ogg">
+</video>
+    </div>
+    <br>
+<section>
+  <br>
+  <br>
+  <h1 id ="eve" style="text-align: center";>Events</h1>
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="D:\Destop\Aesthetic\ff3.jpg" style="width: 600px;height: 450px">
+    </div>
+
+    <div class="col">
+      <h2>FU Football League</h2>
+      <p style="text-align: left;">A lot of the boys and girls from the villages have come to the yard, have you all been down? With the huge enthusiasm of the 4-village trainees, the Toad village of F-Camp 2020 is definitely a great highlight during the past 10 years.<br>A lot of the boys and girls from the villages have come to the yard, have you all been down? With the huge enthusiasm of the 4-village trainees, the Toad village of F-Camp 2020 is definitely a great highlight during the past 10 years.</p>
+
+    
+   </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2> Three-Many Ultra Musketeers</h2>
+      <p style="text-align: left;">In 1625 France, d'Artagnan leaves his family in Gascony and travels to Paris to join the Musketeers of the Guard. At a house in Meung-sur-Loire, an older man derides d'Artagnan's horse. Insulted, d'Artagnan demands a duel. But the older man's companions instead beat d'Artagnan unconscious with a cooking pot and a metal tong that breaks his sword. His letter of introduction to Monsieur de Tréville, the commander of the Musketeers, is also stolen. D'Artagnan resolves to avenge himself upon the older man, who is later revealed to be the Comte de Rochefort, an agent of Cardinal Richelieu, who is passing orders from the Cardinal to his spy, Lady de Winter, usually called Milady de Winter or simply "Milady".</p>
+
+    
+   </div>
+   <div class="col">
+      <img src="D:\Destop\Aesthetic\f6.jpg" style="width: 600px;height: 450px">
+    </div>
+  </div>
+</div>  
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="D:\Destop\Aesthetic\f1.jpg" style="width: 600px;height: 450px">
+    </div>
+
+    <div class="col">
+      <h2> Fast and Furious Running Toad</h2>
+      <p style="text-align: left;">This year,Fcamp is back officially, wearing a special mark - the 10-year maturity column of the system of generations. Grateful and record a record milestone, the BTC team created "BACK", as an event to return home together at Fcamp2021.<br>
+ After many years, the image of the legend is always full of energy, blood and fire, ready to infuse the new recruits of F school. The new systems of Fcamp we will always keep the dynamism , enthusiasm, burning that money passed down.
+ BTC Fcamp 2021 would like to thank the brothers and sisters who always love and give love to adults to F-Camp. Fcamp is always a home ready to welcome you whenever you want to return.</p>
+
+    
+   </div>
+  </div>
+</div>    
+</section>
+
+<!--video-->
+
+
+<section>
+<br>
+<br>
+<h1 id="foo" style="text-align: center;">Food and Beverage</h1>
+<br> 
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <img src="D:\Destop\Aesthetic\food3.jpg" style="width: 300px ;height:450px">
+            <br>
+            <h2> Corn Hotdog</h2>
+          </div>
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\food2.jpg" style="width: 300px; height:450px" >
+            <br>
+            <h2> Fried Potato</h2>
+          </div>
+
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\food5.jpg" style="width: 300px; height:450px" >
+            <br>
+            <h2>Fried Chicken Wings</h2>
+          </div>
+        
+      </div>
+    </div>
+    
+    <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <img src="D:\Destop\Aesthetic\food8.jpg" style="width: 300px ;height:450px">
+            <br>
+            <h2> SIMPle Coke</h2>
+            
+          </div>
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\food7.jpg" style="width: 300px; height:450px" >
+            <br>
+            <h2>  Blueberry Juice</h2>
+            
+          </div>
+
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\food6.jpg" style="width: 300px; height:450px" >
+            <br>
+            <h2> Doctor Away Juice</h2>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+    <br>
+    <br>  
+<!-- Contact us-->
+<section>
+<br>
+<br>
+
+<h1 id="gal" style="text-align: center;">Gallery</h1>
+<br> 
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <img src="D:\Destop\Aesthetic\fx3.jpg" style="width: 300px ;height:450px">
+            
+          </div>
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\fx4.jpg" style="width: 300px; height:450px" >
+            
+          </div>
+
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\fx5.jpg" style="width: 300px; height:450px" >
+        
+          </div>
+        
+      </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <img src="D:\Destop\Aesthetic\fx6.jpg" style="width: 300px ;height:450px">
+            
+          </div>
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\fx7.jpg" style="width: 300px; height:450px" >
+            
+          </div>
+
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\fx2.jpg" style="width: 300px; height:450px" >
+        
+          </div>
+
+
+        
+      </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <img src="D:\Destop\Aesthetic\fx.jpg" style="width: 300px ;height:450px">
+            
+          </div>
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\f7.jpg" style="width: 300px; height:450px" >
+            
+          </div>
+
+
+            <div class="col">
+            <img src="D:\Destop\Aesthetic\fx1.jpg" style="width: 300px; height:450px" >
+        
+          </div>
+
+          
+        
+      </div>
+    </div>
+
+  </section>
+
+<form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Wanna join with us?</h1>
+      <p style="font-weight: bold;">Student Attended Count:659 </p>
+
+      <div class="clearfix">
+        <button type="button" id="formButton" class="cancelbtn">Yes</button>
+        <button type="button" class="deletebtn">Maybe</button>
+      </div>
+    </div>
+  </form>
+
+<form id="form1">
+      <h1 id="reg" style="text-align: center;"><b>Registation</h1></b>
+      <div class="container">
+  <div style="text-align:center;">
+    
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="D:\Destop\Aesthetic\f7.jpg" style="width:100% ">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">Your First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+        <label for="fname">Your Last Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your last name..">
+        <label for="lname">Your Student ID</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your Student ID..">
+        <label for="country">Your Village</label>
+        <select id="country" name="country">
+          <option value="australia">F Village</option>
+          <option value="canada">P Village</option>
+          <option value="usa">U Village</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+    </section>
+</form>
+
+<!--footer-->
+<div class="footer">
+  <br>
+  <a href="https://www.facebook.com/nhom.momun" class="fa fa-facebook"></a>
+  <a href="https://www.youtube.com/watch?v=Zzn9-ATB9aU" class="fa fa-youtube"></a>
+  <a href="https://www.instagram.com/hieuvu_1112/" class="fa fa-instagram"></a>
+<a href="https://twitter.com/komoshuai" class="fa fa-twitter"></a>
+<br>
+<br>
+<p>@2021 Fcamprovip. All rights reserved</p>
+<br>
+</div>
+<a id="button"></a>
+<script>var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+</script>    
+
+</body>
+
+  </html>
